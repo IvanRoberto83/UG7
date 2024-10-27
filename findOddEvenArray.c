@@ -2,26 +2,34 @@
 //semangat! yang perlu kalian isi hanya bagian fungsi ganjilGenap dan PanjangArray
 
 void ganjilGenap(int size) {
-    // Periksa apakah size ganjil atau genap, lalu: 
-    // Jika genap, cetak "Array adalah genap"
-    // Jika ganjil, cetak "Array adalah ganjil"
-
+    if(size%2 != 0){
+        printf("Array merupakan ganjil\n");
+    }
+    else{
+        printf("Array merupakan genap\n");
+    }
 }
 
 //UBAH PARAMETER namaKalian dengan nama kalian.
-void PanjangArray(int *namaKalian, int size) {
-    // Periksa panjang array dengan 'size'
-    
-    //kondisi yang harus terpenuhi:
-    // Jika size genap dan lebih besar dari atau sama dengan 6, cetak elemen ke-3 dan ke-6 dari 'namaKalian'
-    // Jika size genap dan lebih besar dari 3 tapi kurang dari 6 maka cetak element ke 3 saja dari 'namaKalian' dan element yang satunya bernilaikan 0.
-    // Jika size genap dan kurang dari 3, cetak kedua element dengan nilai 0
-    // Jika size ganjil, cetak elemen terakhir dari 'namaKalian'
+void PanjangArray(int *ivan, int size) {
+    int *refIvan = ivan; 
+    int element = size;
+    if(size >= 6 && size%2 == 0){
+        printf("Elemen ke-3 : %d\n", refIvan[2] );
+        printf("Elemen ke-6 : %d\n\n", refIvan[5]);
+    }
+    else if(size >= 3 && size < 6 && size%2 == 0){
+        printf("Elemen ke-3 : %d\n", refIvan[2]);
+        printf("Elemen ke-6 : 0\n\n");
+    }
+    else if( size < 3 && size%2 == 0){
+        printf("Elemen ke-3 : 0\n");
+        printf("Elemen ke-6 : 0\n\n");
+    }
+    else if(size%2 != 0 ){
+        printf("Elemen terakhir : %d\n\n", refIvan[element-1]);
+    }
 }
-
-
-
-
 
 // Bagian ini JANGAN dirubah 😠
 // Bagian ini JANGAN dirubah 😠
